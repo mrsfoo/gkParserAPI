@@ -4,4 +4,5 @@ public interface IGkDbRelease  extends IGkDbItem
 {
 	public boolean isSampler();
 	public IGkDbArtist getArtist();
+	//Datum
 }
