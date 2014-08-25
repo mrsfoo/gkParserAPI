@@ -1,11 +1,14 @@
 package com.zwb.geekology.parser.api.parser;
 
+import java.sql.Timestamp;
+
+import com.zwb.geekology.parser.enums.GkParsingEventType;
+
 public interface IGkParsingEvent 
-{
-	public enum GkParsingEventType { ERROR_INITIALISATION }
-	
+{	
 	public GkParsingEventType getType();
 	public String getMessage();
 	public IGkParsingSource getSource();
+	public Timestamp getTimestamp();
 
 }

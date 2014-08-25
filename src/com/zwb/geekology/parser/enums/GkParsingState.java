@@ -1,8 +1,9 @@
-package com.zwb.geekology.parser.api.parser;
+package com.zwb.geekology.parser.enums;
 
 public enum GkParsingState 
 {
 	UNSPECIFIED,
+	RUNNING,
 	SUCCESS,
 	ERROR,
 }

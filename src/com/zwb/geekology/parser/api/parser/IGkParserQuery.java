@@ -6,5 +6,4 @@ public interface IGkParserQuery
 	public String getRelease();
 	public boolean hasRelease();
 	public boolean isSampler();
-	
 }

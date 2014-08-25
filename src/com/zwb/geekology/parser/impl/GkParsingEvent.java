@@ -1,23 +1,21 @@
-package com.zwb.geekology.parser.api.parser;
+package com.zwb.geekology.parser.impl;
 
-import com.zwb.geekology.parser.api.parser.IGkParsingEvent.GkParsingEventType;
+import java.sql.Timestamp;
 
-public class GkParsingEventFactory
-{
-	public IGkParsingEvent createParsingEvent(GkParsingEventType type, String message, IGkParsingSource source)
-	{
-		return new GkParsingEvent(type, message, source);
-	}
-}
+import com.zwb.geekology.parser.api.parser.IGkParsingEvent;
+import com.zwb.geekology.parser.api.parser.IGkParsingSource;
+import com.zwb.geekology.parser.enums.GkParsingEventType;
 
-class GkParsingEvent implements IGkParsingEvent
+public class GkParsingEvent implements IGkParsingEvent
 {
 	private GkParsingEventType type;
 	private String message;
 	private IGkParsingSource source; 
+	private Timestamp timestamp;
 	
 	public GkParsingEvent(GkParsingEventType type, String message, IGkParsingSource source)
 	{
+		this.timestamp = new Timestamp(System.currentTimeMillis());
 		this.type = type;
 		this.message = message;
 		this.source = source;
@@ -39,5 +37,11 @@ class GkParsingEvent implements IGkParsingEvent
 	public IGkParsingSource getSource()
 	{
 		return this.source;
+	}
+
+	@Override
+	public Timestamp getTimestamp() 
+	{
+		return this.timestamp;
 	}
 }
