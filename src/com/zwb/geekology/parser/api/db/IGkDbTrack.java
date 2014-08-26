@@ -6,7 +6,7 @@ public interface IGkDbTrack extends IGkDbItemWithDesc, IGkDbItemWithStyleTags
 {
 	public int getTrackNo();
 	public IGkDbRelease getRelease();
-	public IGkDbRelease getArtist();
+	public IGkDbArtist getArtist();
 	public int getDuration();
 
 }
