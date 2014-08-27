@@ -3,17 +3,17 @@ package com.zwb.geekology.parser.api.exception;
 import com.zwb.geekology.parser.api.parser.IGkParsingEvent;
 import com.zwb.geekology.parser.api.parser.IGkParsingResult;
 
-public class GkParserException extends Exception
+public class GkParserRuntimeException extends RuntimeException
 {
 	private IGkParsingResult result;
 	
-	public GkParserException(IGkParsingResult result, String message)
+	public GkParserRuntimeException(IGkParsingResult result, String message)
 	{
 		super(message);
 		this.result = result;
 	}
 	
-	public GkParserException(IGkParsingResult result, String message, Throwable cause)
+	public GkParserRuntimeException(IGkParsingResult result, String message, Throwable cause)
 	{
 		super(message, cause);
 		this.result = result;
