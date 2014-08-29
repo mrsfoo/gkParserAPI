@@ -1,6 +1,9 @@
 package com.zwb.geekology.parser.abstr.db;
 
+import java.util.List;
+
 import com.zwb.geekology.parser.api.db.IGkDbItem;
+import com.zwb.geekology.parser.api.parser.IGkParsingEvent;
 import com.zwb.geekology.parser.api.parser.IGkParsingSource;
 
 public abstract class AbstrGkDbItem implements IGkDbItem
@@ -28,4 +31,7 @@ public abstract class AbstrGkDbItem implements IGkDbItem
 	{
 		this.name = name;
 	}
+	
+	abstract public List<IGkParsingEvent> prefetch(List<IGkParsingEvent> events);
+
 }

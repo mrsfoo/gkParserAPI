@@ -8,5 +8,6 @@ public interface IGkDbTrack extends IGkDbItemWithDesc, IGkDbItemWithStyleTags
 	public IGkDbRelease getRelease();
 	public IGkDbArtist getArtist();
 	public int getDuration();
+	public boolean hasDuration();
 
 }
