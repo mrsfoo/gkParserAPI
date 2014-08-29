@@ -44,4 +44,10 @@ public class GkParsingEvent implements IGkParsingEvent
 	{
 		return this.timestamp;
 	}
+
+	@Override
+	public int compareTo(IGkParsingEvent o)
+	{
+		return this.getTimestamp().compareTo(o.getTimestamp());
+	}
 }

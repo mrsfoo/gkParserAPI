@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 import com.zwb.geekology.parser.enums.GkParsingEventType;
 
-public interface IGkParsingEvent 
+public interface IGkParsingEvent extends Comparable<IGkParsingEvent>
 {	
 	public GkParsingEventType getType();
 	public String getMessage();

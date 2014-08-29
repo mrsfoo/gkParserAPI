@@ -1,6 +1,7 @@
 package com.zwb.geekology.parser.impl;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.zwb.geekology.parser.api.parser.GkParserObjectFactory;
@@ -45,11 +46,13 @@ public abstract class GkParsingResult implements IGkParsingResult
 	public void addEvent(IGkParsingEvent event) 
 	{
 		this.events.add(event);
+		Collections.sort(this.events);
 	}
 	
 	public void addEvent(GkParsingEventType type, String message) 
 	{
 		this.events.add(GkParserObjectFactory.createParsingEvent(type, message, this.getSource()));
+		Collections.sort(this.events);
 	}
 	
 	@Override
