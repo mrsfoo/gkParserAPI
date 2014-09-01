@@ -6,5 +6,4 @@ public interface IGkDbItem
 {
 	public String getName();
 	public IGkParsingSource getSource();
-
 }
