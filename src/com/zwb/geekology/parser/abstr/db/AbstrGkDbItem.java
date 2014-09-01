@@ -34,6 +34,7 @@ public abstract class AbstrGkDbItem implements IGkDbItem
 		this.name = name;
 	}
 	
+	@Override
 	public List<IGkParsingEvent> getEvents()
 	{
 		return this.events;

@@ -128,5 +128,4 @@ public abstract class AbstrGkParser implements IGkParser
 		GkParserException ex = GkParserExceptionFactory.createException(result, cause);
 		throw ex;
 	}
-	
 }
