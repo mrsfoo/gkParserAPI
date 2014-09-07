@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.zwb.geekology.parser.api.db.PrintDetailLevel;
 import com.zwb.geekology.parser.api.parser.GkParserObjectFactory;
 import com.zwb.geekology.parser.api.parser.IGkParsingEvent;
 import com.zwb.geekology.parser.api.parser.IGkParsingResult;
@@ -114,5 +115,10 @@ public abstract class GkParsingResult implements IGkParsingResult
 	public IGkParsingEvent getLastEvent()
 	{
 		return this.events.get(this.events.size()-1);
+	}
+	
+	public void writeToFile(String path, PrintDetailLevel level, boolean append)
+	{
+	    DbItemFileWriter.writeResultToFile(path, this, level, append);
 	}
 }

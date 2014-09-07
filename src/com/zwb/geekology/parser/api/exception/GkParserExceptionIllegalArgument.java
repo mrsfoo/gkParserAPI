@@ -2,7 +2,7 @@ package com.zwb.geekology.parser.api.exception;
 
 import com.zwb.geekology.parser.api.parser.IGkParsingResult;
 
-public class GkParserExceptionIllegalArgument extends GkParserException
+public class GkParserExceptionIllegalArgument extends GkParserRuntimeException
 {
 	public GkParserExceptionIllegalArgument(IGkParsingResult result, String message)
 	{

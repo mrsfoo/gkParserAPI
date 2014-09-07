@@ -14,6 +14,8 @@ public class GkParserExceptionFactory
 			{
 			case EXTERNAL_ERROR:
 				return new GkParserExceptionExternalError(result, event.getMessage(), cause);
+			case ERROR_ARGUMENT:
+				return new GkParserExceptionIllegalArgument(result, event.getMessage(), cause);
 			}
 		}
 		return null;
@@ -26,8 +28,6 @@ public class GkParserExceptionFactory
 			IGkParsingEvent event = result.getEvents().get(i);
 			switch(event.getType())
 			{
-			case ERROR_ARGUMENT:
-				return new GkParserExceptionIllegalArgument(result, event.getMessage(), cause);
 			case NO_ENTRY_FOUND:
 				return new GkParserExceptionNoResultFound(result, event.getMessage(), cause);
 			}

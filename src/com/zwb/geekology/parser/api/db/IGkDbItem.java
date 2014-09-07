@@ -10,4 +10,6 @@ public interface IGkDbItem
 	public String getName();
 	public IGkParsingSource getSource();
 	public List<IGkParsingEvent> getEvents();
+	public String printFormatted(PrintDetailLevel level);
+	public void writeToFile(String path, PrintDetailLevel level, boolean append);
 }

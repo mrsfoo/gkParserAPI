@@ -17,6 +17,11 @@ public class GkParsingSource implements IGkParsingSource
 		return this.id;
 	}
 	
+	public String toString()
+	{
+	    return this.id;
+	}
+	
 	public boolean equals(Object o)
 	{
 		if(o==null)

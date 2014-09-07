@@ -84,7 +84,7 @@ public abstract class AbstrGkParser implements IGkParser
 		return result;
 	}
 	
-	protected IGkParsingResult setResultCheckArgs(GkParsingResult result, IGkParserQuery query) throws GkParserException
+	private IGkParsingResult setResultCheckArgs(GkParsingResult result, IGkParserQuery query) throws GkParserException
 	{
 		if(query.isSampler())
 		{

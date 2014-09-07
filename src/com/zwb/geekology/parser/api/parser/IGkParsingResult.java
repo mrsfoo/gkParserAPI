@@ -2,8 +2,8 @@ package com.zwb.geekology.parser.api.parser;
 
 import java.util.List;
 
-import com.zwb.geekology.parser.api.db.IGkDbArtist;
-import com.zwb.geekology.parser.api.db.IGkDbRelease;
+import com.zwb.geekology.parser.api.db.IGkDbItem;
+import com.zwb.geekology.parser.api.db.PrintDetailLevel;
 import com.zwb.geekology.parser.enums.GkParsingResultType;
 import com.zwb.geekology.parser.enums.GkParsingState;
 
@@ -20,5 +20,7 @@ public interface IGkParsingResult
 	public IGkParsingEvent getLastEvent();
 	public boolean hasAlbum();
 	public boolean hasArtist();
+	public IGkDbItem getData();
+	public void writeToFile(String path, PrintDetailLevel level, boolean append);
 	
 }

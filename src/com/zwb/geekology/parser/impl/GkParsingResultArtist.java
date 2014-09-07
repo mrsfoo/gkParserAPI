@@ -1,6 +1,7 @@
 package com.zwb.geekology.parser.impl;
 
 import com.zwb.geekology.parser.api.db.IGkDbArtist;
+import com.zwb.geekology.parser.api.db.IGkDbItem;
 import com.zwb.geekology.parser.api.parser.IGkParsingResultArtist;
 import com.zwb.geekology.parser.api.parser.IGkParsingResultSampler;
 import com.zwb.geekology.parser.api.parser.IGkParsingSource;
@@ -46,6 +47,12 @@ public class GkParsingResultArtist extends GkParsingResult implements IGkParsing
 	public boolean hasArtist()
 	{
 		return null!=this.artist;
+	}
+
+	@Override
+	public IGkDbItem getData()
+	{
+	    return this.artist;
 	}
 
 }
