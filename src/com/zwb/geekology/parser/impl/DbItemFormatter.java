@@ -2,6 +2,7 @@ package com.zwb.geekology.parser.impl;
 
 import java.net.InterfaceAddress;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.zwb.geekology.parser.api.db.IGkDbArtist;
@@ -125,6 +126,10 @@ public class DbItemFormatter
 	tab.addRow("summary:", breakdown(item.getDescriptionSummary(), WIDTH));
 	tab.addRow("description:", breakdown(item.getDescription(), WIDTH));
 	tab.addRow("style tags [" + item.getStyleTagNames().size() + "]:", breakdown(item.getStyleTagNames(), WIDTH));
+	tab.addRow("formats [" + item.getFormats().size() + "]:", breakdown(item.getFormats(), WIDTH));
+	tab.addRow("labels [" + item.getLabels().size() + "]:", breakdown(item.getLabels(), WIDTH));
+	tab.addRow("track count:", Integer.toString(item.getTrackCount()));
+	tab.addRow("disc count:", Integer.toString(item.getDiscCount()));
 	tab.addRow("tracks [" + item.getTracks().size() + "]:", breakdown(formatTrackList(item.getTracks()), WIDTH));
 	return tab.printHeadless();
     }
@@ -138,6 +143,8 @@ public class DbItemFormatter
 	tab.addRow("by artist:", item.getArtist().getName());
 	tab.addRow("on release:", item.getRelease().getName());
 	tab.addRow("track #:", item.getTrackNo().toString());
+	tab.addRow("disc #:", item.getDiscNo().toString());
+	tab.addRow("absolute #:", item.getAbsolutePosition().toString());
 	tab.addRow("duration:", item.getDuration().toString());
 	tab.addRow("summary:", breakdown(item.getDescriptionSummary(), WIDTH));
 	tab.addRow("description:", breakdown(item.getDescription(), WIDTH));

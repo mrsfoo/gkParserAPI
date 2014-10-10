@@ -11,4 +11,12 @@ public interface IGkDbRelease extends IGkDbItemWithDesc, IGkDbItemWithStyleTags
 	public List<String> getTrackNames();
 	public Date getReleaseDate();
 	public boolean hasReleaseDate();
+	public Integer getTrackCount();
+	public Integer getDiscCount();
+	public List<String> getFormats();
+	public boolean hasFormats();
+	public List<String> getLabels();
+	public boolean hasLabels();
+	
+	
 }

@@ -9,5 +9,6 @@ public interface IGkDbArtist extends IGkDbItemWithDesc, IGkDbItemWithStyleTags
 	public List<String> getReleaseNames();
 	public List<IGkDbArtist> getSimilar();
 	public List<String> getSimilarsNames();
+	public boolean hasSimilars();
 	//Herkunftsland, Sprache(n)
 }
