@@ -18,5 +18,4 @@ public interface IGkDbRelease extends IGkDbItemWithDesc, IGkDbItemWithStyleTags
 	public List<String> getLabels();
 	public boolean hasLabels();
 	
-	
 }

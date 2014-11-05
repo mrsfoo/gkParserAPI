@@ -1,6 +1,11 @@
 package com.zwb.geekology.parser.impl;
 
 import com.zwb.geekology.parser.api.parser.IGkParserQuery;
+import com.zwb.geekology.parser.impl.util.GeneralConfig;
+import com.zwb.geekology.parser.impl.util.GkParserStringUtils;
+import com.zwb.lazyload.ILoader;
+import com.zwb.lazyload.LazyLoader;
+import com.zwb.lazyload.Ptr;
 
 public class GkParserQueryArtist implements IGkParserQuery
 {
@@ -31,16 +36,13 @@ public class GkParserQueryArtist implements IGkParserQuery
     @Override
     public String getArtist()
     {
+	/** query objects always return the santised release because they are used to query web apis */
 	return this.artistName;
     }
     
     @Override
     public String getRelease()
     {
-	if (GeneralConfig.ST_IDENTIFIERS.contains(this.releaseName))
-	{
-	    return this.artistName;
-	}
 	return this.releaseName;
     }
     

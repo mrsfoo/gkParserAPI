@@ -12,6 +12,7 @@ import com.zwb.geekology.parser.api.parser.IGkParsingSource;
 import com.zwb.geekology.parser.enums.GkParsingEventType;
 import com.zwb.geekology.parser.enums.GkParsingResultType;
 import com.zwb.geekology.parser.enums.GkParsingState;
+import com.zwb.geekology.parser.impl.util.DbItemFileWriter;
 import com.zwb.tab.Tab;
 
 public abstract class GkParsingResult implements IGkParsingResult

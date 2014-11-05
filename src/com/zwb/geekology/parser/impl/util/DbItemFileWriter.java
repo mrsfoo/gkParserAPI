@@ -1,4 +1,4 @@
-package com.zwb.geekology.parser.impl;
+package com.zwb.geekology.parser.impl.util;
 
 import java.io.File;
 import java.io.FileWriter;
