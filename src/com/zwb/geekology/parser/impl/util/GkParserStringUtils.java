@@ -16,7 +16,7 @@ import com.zwb.stringutil.ReplacementFilter;
 public class GkParserStringUtils
 {
     public static final List<String> ST_IDENTIFIERS = Arrays.asList("st");
-    public static final List<String> RELEASE_IDENTIFIERS = Arrays.asList("ep", "lp", "7''", "12''", "cds", "cdr", "cd");
+    public static final List<String> RELEASE_IDENTIFIERS = Arrays.asList("ep", "lp", "7''", "12''", "cds", "cdr", "cd", "\\(live\\)", "\\[live\\]");
     public static final List<String> THEDAS_IDENTIFIERS = Arrays.asList("the", "der", "die", "das", "le", "la", "les");
     
     public static ISatiniseFilterArray getGeneralArtistNameFilters()
@@ -26,6 +26,7 @@ public class GkParserStringUtils
 	{
 	    list.add(new RemovalFilter(s, ISatiniseFilter.Location.ALL));
 	}
+	list.add(new RemovalFilter("[\\.]+", ISatiniseFilter.Location.END));
 	return new FilterArray(list);
     }
 
@@ -38,8 +39,9 @@ public class GkParserStringUtils
 	}
 	for(String s: ST_IDENTIFIERS)
 	{
-	    list.add(new ReplacementFilter(s, artistName, ISatiniseFilter.Location.ALL));
+	    list.add(new ReplacementFilter(s, artistName, ISatiniseFilter.Location.EXCLUSIVE));
 	}
+	list.add(new RemovalFilter("[\\.]+", ISatiniseFilter.Location.END));
 	return new FilterArray(list);
     }
     
